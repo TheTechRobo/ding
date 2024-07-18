@@ -61,3 +61,7 @@ async def post(request, item):
         return sanic.json("ok:nosend")
     await queue.put(data)
     return sanic.json("ok")
+
+@app.get("/new")
+async def new(_request):
+    return uuid7str()
